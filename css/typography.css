@@ -1,0 +1,231 @@
+/**
+ * TYPOGRAPHY SYSTEM
+ * Highly legible, restrained, executive hierarchy
+ */
+
+/* Eyebrow / Section taxonomy label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-eyebrow);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+  color: var(--color-blue-primary);
+  line-height: var(--line-height-tight);
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: currentColor;
+  border-radius: var(--radius-xs);
+}
+
+.eyebrow--cyan {
+  color: var(--color-cyan-primary);
+}
+
+.eyebrow--muted {
+  color: var(--color-text-secondary);
+}
+
+/* Slide Titles */
+.slide-title {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-title);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+}
+
+/* Slide Subtitles / Strategic Thesis */
+.slide-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-subtitle);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-secondary);
+  max-width: 1200px;
+}
+
+/* Hero / Large Statement */
+.statement-display {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-display);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tighter);
+  color: var(--color-text-primary);
+}
+
+.statement-lead {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-lead);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-secondary);
+}
+
+/* Deck Cover Title */
+.deck-cover-title {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-display-xl);
+  font-weight: var(--weight-black);
+  line-height: 1.05;
+  letter-spacing: var(--letter-spacing-tighter);
+  color: var(--color-text-primary);
+}
+
+.deck-cover-subtitle {
+  font-family: var(--font-sans);
+  font-size: 26px;
+  font-weight: var(--weight-regular);
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+  max-width: 900px;
+}
+
+/* Body Scales */
+.body-lead {
+  font-size: var(--font-size-lead);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+}
+
+.body-lg {
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-secondary);
+}
+
+.body-md {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.body-sm {
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-muted);
+}
+
+/* Monospace & Technical Labels */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-caption);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.mono-code {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  background-color: var(--color-surface-subtle);
+  border: 1px solid var(--color-border-hairline);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  color: var(--color-cyan-hover);
+}
+
+/* Metric Typography */
+.metric-value-xl {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-metric-xl);
+  font-weight: var(--weight-black);
+  line-height: 1.0;
+  letter-spacing: var(--letter-spacing-tighter);
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.metric-value-lg {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-metric-lg);
+  font-weight: var(--weight-bold);
+  line-height: 1.0;
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.metric-value-md {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-metric-md);
+  font-weight: var(--weight-bold);
+  line-height: 1.1;
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.metric-unit {
+  font-size: 0.45em;
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  margin-left: 2px;
+}
+
+.metric-label {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  margin-top: 8px;
+}
+
+.metric-subtext {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+  margin-top: 4px;
+}
+
+/* Captions and Footers */
+.caption {
+  font-size: var(--font-size-caption);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+}
+
+/* Emphasis and Inline Modifiers */
+.text-accent {
+  color: var(--color-blue-primary) !important;
+}
+
+.text-cyan {
+  color: var(--color-cyan-primary) !important;
+}
+
+.text-white {
+  color: var(--color-text-primary) !important;
+}
+
+.text-muted {
+  color: var(--color-text-muted) !important;
+}
+
+.text-success {
+  color: var(--color-status-success) !important;
+}
+
+.text-warning {
+  color: var(--color-status-warning) !important;
+}
+
+.text-danger {
+  color: var(--color-status-danger) !important;
+}
+
+.text-highlight {
+  position: relative;
+  color: var(--color-text-primary);
+  background: linear-gradient(180deg, transparent 65%, var(--color-surface-highlight) 65%);
+}

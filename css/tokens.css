@@ -1,0 +1,275 @@
+/**
+ * DESIGN TOKENS
+ * Executive Presentation Design System
+ * Tailored for: Defence, Government, CNI, AI/Cybersecurity, CTO/CIO Audiences
+ */
+
+:root {
+   /* ==========================================================================
+     1. COLOUR PALETTE
+     Deep navy / near-black foundation, crisp typography, restrained accents
+     ========================================================================== */
+
+   /* Canvas & Backgrounds */
+   --color-canvas: #06090f;
+   /* Deepest void navy - viewport background */
+   --color-surface-base: #0b111c;
+   /* Slide background */
+   --color-surface-1: #111a2b;
+   /* Base card / container surface */
+   --color-surface-2: #17233a;
+   /* Elevated card / hover state */
+   --color-surface-3: #1f2f4c;
+   /* High-contrast element surface */
+   --color-surface-subtle: rgba(255, 255, 255, 0.025);
+   --color-surface-highlight: rgba(37, 99, 235, 0.08);
+
+   /* Borders & Dividers */
+   --color-border-hairline: rgba(255, 255, 255, 0.06);
+   --color-border-subtle: rgba(255, 255, 255, 0.12);
+   --color-border-medium: rgba(255, 255, 255, 0.20);
+   --color-border-strong: rgba(255, 255, 255, 0.35);
+   --color-border-accent: rgba(59, 130, 246, 0.45);
+   --color-border-cyan: rgba(14, 165, 233, 0.40);
+
+   /* Typography / Foreground Colors */
+   --color-text-primary: #f8fafc;
+   /* Crisp off-white for titles & primary data */
+   --color-text-secondary: #94a3b8;
+   /* Muted slate for descriptions & subtitles */
+   --color-text-muted: #64748b;
+   /* Subdued grey for captions, footers & metadata */
+   --color-text-dim: #475569;
+   /* Dim grey for inactive indicators */
+   --color-text-inverse: #0b111c;
+   /* Dark text on light accent tags */
+
+   /* Primary Accent: Sovereign Blue (restrained, confident) */
+   --color-blue-primary: #3b82f6;
+   --color-blue-hover: #60a5fa;
+   --color-blue-dim: #1d4ed8;
+   --color-blue-tint: rgba(59, 130, 246, 0.12);
+   --color-blue-border: rgba(59, 130, 246, 0.35);
+   --color-blue-glow: rgba(59, 130, 246, 0.20);
+
+   /* Secondary Accent: DAINTTA Brand Teal / Technical Cyan */
+   --color-cyan-primary: #0bb3ad;
+   --color-cyan-hover: #1ed7cf;
+   --color-cyan-dim: #078c87;
+   --color-cyan-tint: rgba(11, 179, 173, 0.12);
+   --color-cyan-border: rgba(11, 179, 173, 0.35);
+   --color-cyan-glow: rgba(11, 179, 173, 0.20);
+
+   /* Semantic Status Indicators */
+   --color-status-success: #10b981;
+   --color-status-success-tint: rgba(16, 185, 129, 0.12);
+   --color-status-success-border: rgba(16, 185, 129, 0.35);
+
+   --color-status-warning: #f59e0b;
+   --color-status-warning-tint: rgba(245, 158, 11, 0.12);
+   --color-status-warning-border: rgba(245, 158, 11, 0.35);
+
+   --color-status-danger: #ef4444;
+   --color-status-danger-tint: rgba(239, 68, 68, 0.12);
+   --color-status-danger-border: rgba(239, 68, 68, 0.35);
+
+   /* Technical Grid Lines & Watermarks */
+   --color-grid-line: rgba(255, 255, 255, 0.03);
+   --color-datum-marker: rgba(59, 130, 246, 0.30);
+
+/* ==========================================================================
+   LIGHT THEME DESIGN TOKENS
+   Activated by <body data-theme="light">
+   Preserves 100% token compatibility with crisp executive light palette
+   ========================================================================== */
+
+body[data-theme="light"] {
+   /* Canvas & Backgrounds */
+   --color-canvas: #e2e8f0;
+   /* Soft slate-grey viewport background */
+   --color-surface-base: #ffffff;
+   /* Pure crisp white slide canvas */
+   --color-surface-1: #f8fafc;
+   /* Card background / container surface */
+   --color-surface-2: #f1f5f9;
+   /* Elevated card surface */
+   --color-surface-3: #e2e8f0;
+   /* High-contrast element surface */
+   --color-surface-subtle: rgba(15, 23, 42, 0.035);
+   --color-surface-highlight: rgba(37, 99, 235, 0.08);
+
+   /* Borders & Dividers */
+   --color-border-hairline: rgba(15, 23, 42, 0.07);
+   --color-border-subtle: rgba(15, 23, 42, 0.12);
+   --color-border-medium: rgba(15, 23, 42, 0.22);
+   --color-border-strong: rgba(15, 23, 42, 0.40);
+   --color-border-accent: rgba(37, 99, 235, 0.45);
+   --color-border-cyan: rgba(11, 179, 173, 0.45);
+
+   /* Typography / Foreground Colors */
+   --color-text-primary: #0f172a;
+   /* Deep rich slate-black for high legibility */
+   --color-text-secondary: #475569;
+   /* Balanced slate for subtitles and body text */
+   --color-text-muted: #64748b;
+   /* Muted slate for captions and metadata */
+   --color-text-dim: #94a3b8;
+   /* Dim grey for inactive indicators */
+   --color-text-inverse: #ffffff;
+   /* Light text on dark badge backgrounds */
+
+   /* Primary Accent: Sovereign Blue (adjusted for light contrast) */
+   --color-blue-primary: #1d4ed8;
+   --color-blue-hover: #2563eb;
+   --color-blue-dim: #1e40af;
+   --color-blue-tint: rgba(37, 99, 235, 0.08);
+   --color-blue-border: rgba(37, 99, 235, 0.35);
+   --color-blue-glow: rgba(37, 99, 235, 0.12);
+
+   /* Secondary Accent: DAINTTA Brand Teal (rich contrast on light) */
+   --color-cyan-primary: #078c87;
+   --color-cyan-hover: #0bb3ad;
+   --color-cyan-dim: #056864;
+   --color-cyan-tint: rgba(11, 179, 173, 0.09);
+   --color-cyan-border: rgba(11, 179, 173, 0.35);
+   --color-cyan-glow: rgba(11, 179, 173, 0.12);
+
+   /* Semantic Status Indicators */
+   --color-status-success: #059669;
+   --color-status-success-tint: rgba(5, 150, 105, 0.10);
+   --color-status-success-border: rgba(5, 150, 105, 0.35);
+
+   --color-status-warning: #d97706;
+   --color-status-warning-tint: rgba(217, 119, 6, 0.10);
+   --color-status-warning-border: rgba(217, 119, 6, 0.35);
+
+   --color-status-danger: #dc2626;
+   --color-status-danger-tint: rgba(220, 38, 38, 0.10);
+   --color-status-danger-border: rgba(220, 38, 38, 0.35);
+
+   /* Technical Grid Lines & Watermarks */
+   --color-grid-line: rgba(15, 23, 42, 0.04);
+   --color-datum-marker: rgba(37, 99, 235, 0.25);
+
+   /* Shadows calibrated for white surfaces */
+   --shadow-subtle: 0 2px 10px -1px rgba(15, 23, 42, 0.06);
+   --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 0 0 1px var(--color-border-subtle);
+   --shadow-elevated: 0 12px 30px -4px rgba(15, 23, 42, 0.10), 0 0 0 1px var(--color-border-medium);
+   --shadow-accent-glow: 0 0 20px -4px var(--color-blue-glow);
+}
+
+   /* ==========================================================================
+      2. TYPOGRAPHY
+      Inter + JetBrains Mono presentation scale calibrated for 1920x1080 canvas
+      ========================================================================== */
+   --font-sans: 'Inter',
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+   --font-mono: 'JetBrains Mono',
+      'SF Mono',
+      'Roboto Mono',
+      Menlo,
+      Consolas,
+      monospace;
+
+   /* Font Weights */
+   --weight-regular: 400;
+   --weight-medium: 500;
+   --weight-semibold: 600;
+   --weight-bold: 700;
+   --weight-black: 800;
+
+   /* Type Scale (Calibrated for 1080p canvas) */
+   --font-size-display-xl: 72px;
+   /* Hero statement / main deck title */
+   --font-size-display: 56px;
+   /* Executive statement */
+   --font-size-title: 40px;
+   /* Slide main title */
+   --font-size-subtitle: 22px;
+   /* Slide subtitle / context thesis */
+   --font-size-lead: 26px;
+   /* Lead body or section lead */
+   --font-size-body-lg: 20px;
+   /* Card title or primary paragraph */
+   --font-size-body: 16px;
+   /* Standard slide body */
+   --font-size-body-sm: 14px;
+   /* Secondary detail */
+   --font-size-eyebrow: 13px;
+   /* Section label / taxonomy */
+   --font-size-caption: 12px;
+   /* Footnote, attribution, diagram spec */
+   --font-size-metric-xl: 84px;
+   /* Scorecard primary metric */
+   --font-size-metric-lg: 56px;
+   /* Medium metric */
+   --font-size-metric-md: 40px;
+   /* Compact metric */
+
+   /* Line Heights */
+   --line-height-tight: 1.08;
+   --line-height-snug: 1.22;
+   --line-height-normal: 1.45;
+   --line-height-relaxed: 1.6;
+
+   /* Letter Spacing */
+   --letter-spacing-tighter: -0.035em;
+   --letter-spacing-tight: -0.015em;
+   --letter-spacing-normal: 0;
+   --letter-spacing-wide: 0.05em;
+   --letter-spacing-wider: 0.12em;
+   --letter-spacing-widest: 0.18em;
+
+   /* ==========================================================================
+      3. SPACING & LAYOUT GRID (1920x1080 Standard)
+      ========================================================================== */
+   --slide-width: 1920px;
+   --slide-height: 1080px;
+
+   /* Standard Slide Margins */
+   --slide-padding-x: 100px;
+   --slide-padding-top: 70px;
+   --slide-padding-bottom: 50px;
+   --slide-header-gap: 36px;
+
+   /* Spacing Scale */
+   --space-2: 8px;
+   --space-3: 12px;
+   --space-4: 16px;
+   --space-5: 20px;
+   --space-6: 24px;
+   --space-8: 32px;
+   --space-10: 40px;
+   --space-12: 48px;
+   --space-16: 64px;
+   --space-20: 80px;
+   --space-24: 96px;
+
+   /* ==========================================================================
+      4. SHAPE & ELEVATION
+      Restrained radii and depth tailored for high-security executive briefings
+      ========================================================================== */
+   --radius-xs: 2px;
+   --radius-sm: 4px;
+   --radius-md: 6px;
+   --radius-lg: 10px;
+   --radius-pill: 9999px;
+
+   --shadow-subtle: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+   --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.5),
+      0 0 0 1px var(--color-border-subtle);
+   --shadow-elevated: 0 20px 40px -10px rgba(0, 0, 0, 0.65),
+      0 0 0 1px var(--color-border-medium);
+   --shadow-accent-glow: 0 0 25px -5px var(--color-blue-glow);
+
+   /* Transitions */
+   --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+   --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+   --transition-slide: 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}

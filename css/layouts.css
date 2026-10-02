@@ -1,0 +1,341 @@
+/**
+ * LAYOUT SYSTEM
+ * Reusable 16:9 presentation layout primitives
+ * Built with CSS Grid and Flexbox
+ */
+
+/* ==========================================================================
+   1. COVER / TITLE SLIDE (.layout-cover)
+   ========================================================================== */
+
+.layout-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.cover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cover-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 1400px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.cover-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-8);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border-subtle);
+  margin-top: var(--space-10);
+}
+
+.cover-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ==========================================================================
+   2. EXECUTIVE STATEMENT LAYOUT (.layout-statement)
+   ========================================================================== */
+
+.layout-statement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-10);
+  height: 100%;
+  max-width: 1550px;
+}
+
+.statement-callout-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+  margin-top: var(--space-6);
+}
+
+/* ==========================================================================
+   3. MULTI-COLUMN PRIMITIVES (.layout-two-column, .layout-three-column)
+   ========================================================================== */
+
+.layout-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  height: 100%;
+  align-items: stretch;
+}
+
+.layout-two-column--40-60 {
+  grid-template-columns: 2fr 3fr;
+  gap: var(--space-10);
+}
+
+.layout-two-column--60-40 {
+  grid-template-columns: 3fr 2fr;
+  gap: var(--space-10);
+}
+
+.layout-two-column--align-center {
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-height: 0;
+}
+
+.layout-three-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+  height: 100%;
+  align-items: stretch;
+}
+
+/* ==========================================================================
+   4. CARD GRID (.layout-card-grid)
+   ========================================================================== */
+
+.layout-card-grid {
+  display: grid;
+  gap: var(--space-6);
+  height: 100%;
+  align-items: stretch;
+}
+
+.layout-card-grid--2x2 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.layout-card-grid--4-col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ==========================================================================
+   5. COMPARISON LAYOUT (.layout-comparison)
+   Contrasts legacy / threat baseline against target sovereign capability
+   ========================================================================== */
+
+.layout-comparison {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--space-8);
+  height: 100%;
+  align-items: stretch;
+}
+
+.comparison-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  width: 48px;
+}
+
+.comparison-line {
+  flex: 1;
+  width: 1px;
+  background-color: var(--color-border-subtle);
+}
+
+.comparison-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-2);
+  border: 1px solid var(--color-border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   6. PROCESS / LIFECYCLE LAYOUT (.layout-process)
+   Horizontal sequential pipeline with stage gates
+   ========================================================================== */
+
+.layout-process {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  height: 100%;
+  justify-content: center;
+}
+
+.process-pipeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-5);
+  position: relative;
+  align-items: stretch;
+}
+
+/* ==========================================================================
+   7. METRICS LAYOUT (.layout-metrics)
+   ========================================================================== */
+
+.layout-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  height: 100%;
+}
+
+.metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.metrics-strip--3-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.metrics-content-split {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-8);
+  flex: 1;
+  min-height: 0;
+}
+
+/* ==========================================================================
+   8. ARCHITECTURE DIAGRAM LAYOUT (.layout-architecture)
+   ========================================================================== */
+
+.layout-architecture {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  height: 100%;
+}
+
+.architecture-canvas-wrapper {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface-1);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  position: relative;
+  overflow: hidden;
+}
+
+.architecture-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border-hairline);
+  margin-bottom: var(--space-4);
+}
+
+.architecture-legend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-caption);
+  color: var(--color-text-secondary);
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-xs);
+}
+
+/* ==========================================================================
+   9. SECTION DIVIDER LAYOUT (.layout-section)
+   ========================================================================== */
+
+.layout-section {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+  height: 100%;
+}
+
+.section-hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.section-numeral {
+  font-family: var(--font-mono);
+  font-size: 96px;
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  color: var(--color-blue-primary);
+  opacity: 0.85;
+}
+
+.section-agenda-track {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-8);
+  background-color: var(--color-surface-1);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+/* ==========================================================================
+   10. TIMELINE LAYOUT (.layout-timeline)
+   ========================================================================== */
+
+.layout-timeline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-8);
+  height: 100%;
+}
+
+.timeline-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-6);
+  position: relative;
+}
+
+.timeline-track::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-blue-primary), var(--color-cyan-primary));
+  z-index: 0;
+  opacity: 0.4;
+}

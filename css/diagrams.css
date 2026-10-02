@@ -1,0 +1,230 @@
+/**
+ * SVG TECHNICAL DIAGRAM SYSTEM
+ * Engineering architecture, sovereign enclaves, data flows, and nodes
+ */
+
+.diagram-svg {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  display: block;
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+  overflow: visible;
+}
+
+/* ==========================================================================
+   1. ZONES & SECURITY BOUNDARIES
+   ========================================================================== */
+
+.svg-zone {
+  fill: rgba(17, 26, 43, 0.45);
+  stroke: var(--color-border-subtle);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 6;
+  rx: 8px;
+}
+
+.svg-zone--enclave {
+  fill: rgba(14, 165, 233, 0.03);
+  stroke: var(--color-cyan-border);
+  stroke-dasharray: 8 6;
+}
+
+.svg-zone--sovereign {
+  fill: rgba(59, 130, 246, 0.04);
+  stroke: var(--color-blue-border);
+  stroke-dasharray: none;
+}
+
+.svg-zone-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  fill: var(--color-text-muted);
+}
+
+.svg-zone-label--cyan {
+  fill: var(--color-cyan-hover);
+}
+
+.svg-zone-label--blue {
+  fill: var(--color-blue-hover);
+}
+
+/* ==========================================================================
+   2. COMPONENT NODES
+   ========================================================================== */
+
+.svg-node {
+  cursor: default;
+  transition: transform var(--transition-fast);
+}
+
+.svg-node-box {
+  fill: var(--color-surface-1);
+  stroke: var(--color-border-subtle);
+  stroke-width: 1.5;
+  rx: 6px;
+  transition: all var(--transition-fast);
+}
+
+.svg-node-box--elevated {
+  fill: var(--color-surface-2);
+  stroke: var(--color-border-medium);
+}
+
+.svg-node-box--highlight {
+  fill: #142035;
+  stroke: var(--color-blue-primary);
+  stroke-width: 2;
+  filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.25));
+}
+
+.svg-node-box--cyan {
+  fill: #0c2333;
+  stroke: var(--color-cyan-primary);
+  stroke-width: 2;
+  filter: drop-shadow(0 4px 12px rgba(14, 165, 233, 0.25));
+}
+
+/* Node Text Elements */
+.svg-node-title {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--weight-bold);
+  fill: var(--color-text-primary);
+}
+
+.svg-node-subtitle {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: var(--weight-regular);
+  fill: var(--color-text-secondary);
+}
+
+.svg-node-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.05em;
+  fill: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   3. CONNECTORS, BUSES & FLOW ARROWS
+   ========================================================================== */
+
+.svg-connector {
+  stroke: #475569;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.svg-connector--accent {
+  stroke: var(--color-blue-primary);
+  stroke-width: 2;
+}
+
+.svg-connector--cyan {
+  stroke: var(--color-cyan-primary);
+  stroke-width: 2;
+}
+
+.svg-connector--flow {
+  stroke-dasharray: 6 6;
+  animation: svgDashFlow 20s linear infinite;
+}
+
+@keyframes svgDashFlow {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
+.svg-bus {
+  stroke: #1e293b;
+  stroke-width: 8;
+  fill: none;
+  stroke-linecap: round;
+}
+
+.svg-bus-core {
+  stroke: var(--color-blue-dim);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+}
+
+/* Connector Label Pill */
+.svg-label-bg {
+  fill: var(--color-surface-base);
+  stroke: var(--color-border-hairline);
+  rx: 3px;
+}
+
+.svg-label-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--weight-medium);
+  fill: var(--color-text-muted);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+/* Numbered Stage Badge */
+.svg-stage-circle {
+  fill: var(--color-blue-tint);
+  stroke: var(--color-blue-border);
+  stroke-width: 1.5;
+}
+
+.svg-stage-number {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+  fill: var(--color-blue-hover);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+/* ==========================================================================
+   4. LIGHT THEME DIAGRAM OVERRIDES
+   ========================================================================== */
+
+body[data-theme="light"] .svg-zone {
+  fill: rgba(241, 245, 249, 0.65);
+}
+
+body[data-theme="light"] .svg-zone--enclave {
+  fill: rgba(11, 179, 173, 0.04);
+}
+
+body[data-theme="light"] .svg-node-box--highlight {
+  fill: #eff6ff;
+  stroke: var(--color-blue-primary);
+  filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.15));
+}
+
+body[data-theme="light"] .svg-node-box--cyan {
+  fill: #f0fdfa;
+  stroke: var(--color-cyan-primary);
+  filter: drop-shadow(0 4px 12px rgba(11, 179, 173, 0.15));
+}
+
+body[data-theme="light"] .svg-connector {
+  stroke: #94a3b8;
+}
+
+body[data-theme="light"] .svg-label-bg {
+  fill: #ffffff;
+  stroke: var(--color-border-subtle);
+}
+
+body[data-theme="light"] .svg-label-text {
+  fill: var(--color-text-secondary);
+}
+

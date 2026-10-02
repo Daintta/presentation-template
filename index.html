@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Briefing Template | Sovereign Technology Design System</title>
+
+  <!-- Typography (Google Fonts with robust system fallbacks) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Design System CSS Hierarchy -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layouts.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/diagrams.css">
+</head>
+
+<body data-theme="light">
+
+  <div id="deck-viewport">
+    <div id="deck-stage">
+      <!-- Subtle Technical Engineering Grid Overlay -->
+      <div class="deck-grid-overlay"></div>
+      <div class="deck-stage-markers"></div>
+
+      <!-- ====================================================================
+           SLIDE 01: TITLE / COVER SLIDE
+           ==================================================================== -->
+      <section class="slide active" id="slide-1">
+        <div class="slide-inner">
+          <img src="assets/daintta-mark-white.png" alt="" class="brand-mark brand-mark--watermark logo-on-dark"
+            aria-hidden="true">
+          <img src="assets/daintta-mark.png" alt="" class="brand-mark brand-mark--watermark logo-on-light"
+            aria-hidden="true">
+          <div class="layout-cover">
+            <!-- Cover Header -->
+            <div class="cover-header">
+              <div class="classification-badge classification-badge--sensitive">
+                <span class="status-dot"></span> NOT OFFICIAL SENSITIVE // STRATEGIC BRIEFING
+              </div>
+              <img src="assets/daintta-logo-white.png" alt="DAINTTA - Finding intelligence in data"
+                class="brand-logo brand-logo--cover logo-on-dark">
+              <img src="assets/daintta-logo.png" alt="DAINTTA - Finding intelligence in data"
+                class="brand-logo brand-logo--cover logo-on-light">
+            </div>
+
+            <!-- Cover Body -->
+            <div class="cover-body">
+              <div class="eyebrow eyebrow--cyan">SOVEREIGN CAPABILITY ARCHITECTURE</div>
+              <h1 class="deck-cover-title">Next-Generation Sovereign AI &amp; Critical Infrastructure Resilience</h1>
+              <p class="deck-cover-subtitle">
+                An engineering and operational blueprint for deploying hardened, deterministic AI systems across
+                air-gapped defence networks and national infrastructure.
+              </p>
+            </div>
+
+            <!-- Cover Meta Grid -->
+            <div class="cover-meta-grid">
+              <div class="cover-meta-item">
+                <span class="mono-label">TARGET AUDIENCE</span>
+                <span class="body-sm text-white">CTO / CIO &amp; Defence Procurement Execs</span>
+              </div>
+              <div class="cover-meta-item">
+                <span class="mono-label">ASSURANCE LEVEL</span>
+                <span class="body-sm text-cyan">NCSC CAF v3.2 / Sovereign Tier-1</span>
+              </div>
+              <div class="cover-meta-item">
+                <span class="mono-label">LEAD CONSULTANCY</span>
+                <span class="body-sm text-cyan" style="font-weight: 600;">DAINTTA</span>
+              </div>
+              <div class="cover-meta-item">
+                <span class="mono-label">VERSION &amp; DATE</span>
+                <span class="body-sm text-muted">v2.4 Final &bull; October 2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 02: EXECUTIVE STATEMENT SLIDE
+           ==================================================================== -->
+      <section class="slide" id="slide-2">
+        <div class="slide-inner">
+          <header class="slide-header">
+            <div class="slide-header-content">
+              <span class="eyebrow">EXECUTIVE THESIS</span>
+              <h2 class="slide-title">Strategic Operating Posture</h2>
+            </div>
+            <div class="slide-header-meta">
+              <span class="classification-badge">NOT OFFICIAL SENSITIVE</span>
+              <img src="assets/daintta-mark-white.png" alt="DAINTTA" class="brand-mark brand-mark--header logo-on-dark">
+              <img src="assets/daintta-mark.png" alt="DAINTTA" class="brand-mark brand-mark--header logo-on-light">
+            </div>
+          </header>
+
+          <div class="slide-body">
+            <div class="layout-statement">
+              <div class="statement-display">
+                Modern deterrence and operational autonomy require <span class="text-accent">sovereign
+                  verification</span> of every inference layer, eliminating third-party pipeline vulnerabilities.
+              </div>
+
+              <div class="statement-lead">
+                Critical national infrastructure cannot rely on black-box commercial APIs. Resilient posture requires
+                deterministic execution, local cryptographic attestation, and fully auditable data provenance.
+              </div>
+
+              <div class="statement-callout-grid">
+                <div class="callout">
+                  <div class="callout-title">01 &bull; Deterministic Assurance</div>
+                  <div class="callout-body">Zero-drift execution pipelines with formal verification of weights and
+                    runtime state.</div>
+                </div>
+                <div class="callout callout--cyan">
+                  <div class="callout-title">02 &bull; Air-Gap Survivability</div>
+                  <div class="callout-body">Autonomous multi-mission operation during severed backhaul and electronic
+                    interference.</div>
+                </div>
+                <div class="callout">
+                  <div class="callout-title">03 &bull; Cryptographic Provenance</div>
+                  <div class="callout-body">Hardware-rooted TPM 2.0 attestation for every model artifact and decision
+                    vector.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <div class="slide-footer-left">NOT OFFICIAL SENSITIVE</div>
+            <div class="slide-footer-center">
+              <img src="assets/daintta-logo-white.png" alt="DAINTTA" class="brand-logo brand-logo--footer logo-on-dark">
+              <img src="assets/daintta-logo.png" alt="DAINTTA" class="brand-logo brand-logo--footer logo-on-light">
+              <span style="opacity: 0.35;">&bull;</span>
+              <span>SOVEREIGN AI ARCHITECTURE BRIEFING</span>
+            </div>
+            <div class="slide-footer-right">02 / 08</div>
+          </footer>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 03: THREE-CARD PILLARS LAYOUT
+           ==================================================================== -->
+      <section class="slide" id="slide-3">
+        <div class="slide-inner">
+          <header class="slide-header">
+            <div class="slide-header-content">
+              <span class="eyebrow">SYSTEM PILLARS</span>
+              <h2 class="slide-title">Core Capability Workstreams</h2>
+              <p class="slide-subtitle">Three integrated architectural domains delivering sovereign resilience from
+                silicon to operational mission edge.</p>
+            </div>
+            <div class="slide-header-meta">
+              <span class="badge badge--blue">ACTIVE PROGRAMME</span>
+              <img src="assets/daintta-mark-white.png" alt="DAINTTA" class="brand-mark brand-mark--header logo-on-dark">
+              <img src="assets/daintta-mark.png" alt="DAINTTA" class="brand-mark brand-mark--header logo-on-light">
+            </div>
+          </header>
+
+          <div class="slide-body">
+            <div class="layout-three-column">
+              <!-- Pillar 1 -->
+              <div class="card card--elevated">
+                <div class="card-header">
+                  <span class="badge badge--muted">DOMAIN 01</span>
+                  <span class="badge badge--success"><span class="status-dot"></span> VERIFIED</span>
+                </div>
+                <h3 class="card-title">Hardware-Enforced Isolation</h3>
+                <p class="card-body">
+                  Deployment of confidential compute enclaves with physical memory encryption. Eliminates side-channel
+                  telemetry and ensures zero host hypervisor inspection.
+                </p>
+                <div class="item-list">
+                  <div class="numbered-item">
+                    <span class="item-numeral">A</span>
+                    <div class="item-content">
+                      <div class="item-title">Memory Sandboxing</div>
+                      <div class="item-desc">Hardware-isolated enclave execution</div>
+                    </div>
+                  </div>
+                  <div class="numbered-item">
+                    <span class="item-numeral">B</span>
+                    <div class="item-content">
+                      <div class="item-title">Attestation Roots</div>
+                      <div class="item-desc">Cryptographic boot chain validation</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <span class="mono-label">READINESS LEVEL</span>
+                  <span class="mono-code">TRL-8 READY</span>
+                </div>
+              </div>
+
+              <!-- Pillar 2 -->
+              <div class="card card--highlighted">
+                <div class="card-header">
+                  <span class="badge badge--blue">DOMAIN 02</span>
+                  <span class="badge badge--cyan"><span class="status-dot"></span> IN FLIGHT</span>
+                </div>
+                <h3 class="card-title">Air-Gapped Model Runtime</h3>
+                <p class="card-body">
+                  Self-contained inference engines running quantized transformer architectures without requiring
+                  external network connectivity or telemetry callbacks.
+                </p>
+                <div class="item-list">
+                  <div class="numbered-item">
+                    <span class="item-numeral">A</span>
+                    <div class="item-content">
+                      <div class="item-title">Quantized Kernels</div>
+                      <div class="item-desc">Sub-4ms tactical inference latency</div>
+                    </div>
+                  </div>
+                  <div class="numbered-item">
+                    <span class="item-numeral">B</span>
+                    <div class="item-content">
+                      <div class="item-title">Local Knowledge Base</div>
+                      <div class="item-desc">Sovereign vector stores with zero leakage</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <span class="mono-label">READINESS LEVEL</span>
+                  <span class="mono-code">TRL-7 VALIDATED</span>
+                </div>
+              </div>
+
+              <!-- Pillar 3 -->
+              <div class="card card--elevated">
+                <div class="card-header">
+                  <span class="badge badge--muted">DOMAIN 03</span>
+                  <span class="badge badge--blue"><span class="status-dot"></span> PLANNED</span>
+                </div>
+                <h3 class="card-title">Continuous Audit &amp; C2 Integration</h3>
+                <p class="card-body">
+                  Immutable forensic audit trails capturing all sensor inputs, reasoning steps, and actuator commands
+                  into append-only cryptographic event ledgers.
+                </p>
+                <div class="item-list">
+                  <div class="numbered-item">
+                    <span class="item-numeral">A</span>
+                    <div class="item-content">
+                      <div class="item-title">Merkle Audit Tree</div>
+                      <div class="item-desc">Tamper-evident operational logging</div>
+                    </div>
+                  </div>
+                  <div class="numbered-item">
+                    <span class="item-numeral">B</span>
+                    <div class="item-content">
+                      <div class="item-title">Tactical C2 Bus</div>
+                      <div class="item-desc">Standardised NATO STANAG compliant bus</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <span class="mono-label">READINESS LEVEL</span>
+                  <span class="mono-code">TRL-6 INTEGRATION</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <div class="slide-footer-left">NOT OFFICIAL SENSITIVE</div>
+            <div class="slide-footer-center">
+              <img src="assets/daintta-logo-white.png" alt="DAINTTA" class="brand-logo brand-logo--footer logo-on-dark">
+              <img src="assets/daintta-logo.png" alt="DAINTTA" class="brand-logo brand-logo--footer logo-on-light">
+              <span style="opacity: 0.35;">&bull;</span>
+              <span>SOVEREIGN AI ARCHITECTURE BRIEFING</span>
+            </div>
+            <div class="slide-footer-right">03 / 08</div>
+          </footer>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 04: TWO-COLUMN COMPARISON
+           ==================================================================== -->
+      <section class="slide" id="slide-4">
+        <div class="slide-inner">
+          <header class="slide-header">
+            <div class="slide-header-content">
+              <span class="eyebrow eyebrow--cyan">COMPARATIVE ANALYSIS</span>
+              <h2 class="slide-title">Legacy Reliance vs. Sovereign Target State</h2>
+              <p class="slide-subtitle">Structural vulnerability comparison illustrating the strategic shift to
+                accredited local execution.</p>
+            </div>
+            <div class="slide-header-meta">
+              <span class="badge badge--muted">PARADIGM SHIFT</span>
+              <img src="assets/daintta-mark-white.png" alt="DAINTTA" class="brand-mark brand-mark--header logo-on-dark">
+              <img src="assets/daintta-mark.png" alt="DAINTTA" class="brand-mark brand-mark--header logo-on-light">
+            </div>
+          </header>
+
+          <div class="slide-body">
+            <div class="layout-comparison">
+              <!-- Left: Legacy Vulnerable State -->
+              <div class="comparison-card comparison-card--baseline">
+                <div class="card-header">
+                  <span class="badge badge--warning">BASELINE OPERATING MODEL</span>
+                  <span class="mono-label">ACCUMULATED RISK</span>
+                </div>
+                <h3 class="card-title text-warning">External Cloud API Dependencies</h3>
+                <ul class="comparison-list">
+                  <li class="comparison-item">
+                    <span class="comparison-icon comparison-icon--cross">&#10005;</span>
+                    <div>
+                      <strong class="text-white">External Network Ingress:</strong> Critical telemetry transmitted
+                      across non-sovereign transit lines with interception risks.
+                    </div>
+                  </li>
+                  <li class="comparison-item">
+                    <span class="comparison-icon comparison-icon--cross">&#10005;</span>
+                    <div>
+                      <strong class="text-white">Unpredictable Model Drift:</strong> Upstream vendor model updates
+                      silently modify behaviour without regression verification.
+                    </div>
+                  </li>
+                  <li class="comparison-item">
+                    <span class="comparison-icon comparison-icon--cross">&#10005;</span>
+                    <div>
+                      <strong class="text-white">Single Point of Failure:</strong> Backhaul severance or orbital denial
+                      immediately collapses mission intelligence capability.
+                    </div>
+                  </li>
+                  <li class="comparison-item">
+                    <span class="comparison-icon comparison-icon--cross">&#10005;</span>
+                    <div>
+                      <strong class="text-white">Unverified Data Sanitisation:</strong> Proprietary vendor telemetry
+                      retention risks compromising enterprise prompts.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Center Divider -->
+              <div class="comparison-divider">
+                <div class="comparison-line"></div>
+                <div class="comparison-badge">VS</div>
+                <div class="comparison-line"></div>
+              </div>
+
+              <!-- Right: Sovereign Target State -->
+              <div class="comparison-card comparison-card--target">
+                <div class="card-header">
+                  <span class="badge badge--blue">TARGET CAPABILITY STATE</span>
+                  <span class="badge badge--success"><span class="status-dot"></span> RESILIENT</span>
+                </div>
+                <h3 class="card-title text-accent">Accredited Sovereign Edge Mesh</h3>
+                <ul class="comparison-list">
+                  <li class="comparison-item">
+                    <span class="comparison-icon comparison-icon--check">&#10003;</span>
+                    <div>
+                      <strong class="text-white">Full Air-Gap Isolation:</strong> 100% of compute, embeddings, and
+                      context stored and processed within verified enclaves.
+                    </div>
+                  </li>
+                  <li class="comparison-item">
+                    <span class="comparison-icon comparison-icon--check">&#10003;</span>
+                    <div>
+                      <strong class="text-white">Deterministic Execution:</strong> Pinned model checksums with formal
+                      verification tests executed before mission deployment.
+                    </div>
+                  </li>
+                  <li class="comparison-item">
+                    <span class="comparison-icon comparison-icon--check">&#10003;</span>
+                    <div>
+                      <strong class="text-white">Autonomous Degraded Mode:</strong> Gracefully falls back to localized
+                      low-power edge nodes with zero cloud dependence.
+                    </div>
+                  </li>
+                  <li class="comparison-item">
+                    <span class="comparison-icon comparison-icon--check">&#10003;</span>
+                    <div>
+                      <strong class="text-white">Full Data Sovereignty:</strong> Complete custodial ownership under UK
+                      Sovereign Control with hardware TPM attestation.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <div class="slide-footer-left">NOT OFFICIAL SENSITIVE</div>
+            <div class="slide-footer-center">
+              <img src="assets/daintta-logo-white.png" alt="DAINTTA" class="brand-logo brand-logo--footer logo-on-dark">
+              <img src="assets/daintta-logo.png" alt="DAINTTA" class="brand-logo brand-logo--footer logo-on-light">
+              <span style="opacity: 0.35;">&bull;</span>
+              <span>SOVEREIGN AI ARCHITECTURE BRIEFING</span>
+            </div>
+            <div class="slide-footer-right">04 / 08</div>
+          </footer>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 05: PROCESS / LIFECYCLE
+           ==================================================================== -->
+      <section class="slide" id="slide-5">
+        <div class="slide-inner">
+          <header class="slide-header">
+            <div class="slide-header-content">
+              <span class="eyebrow">ACCREDITATION ROADMAP</span>
+              <h2 class="slide-title">Defence Systems Assurance Lifecycle</h2>
+              <p class="slide-subtitle">Four-phase rigorous engineering methodology aligning technical milestones with
+                national regulatory gates.</p>
+            </div>
+            <div class="slide-header-meta">
+              <span class="badge badge--cyan">GATED PROCESS</span>
+              <img src="assets/daintta-mark-white.png" alt="DAINTTA" class="brand-mark brand-mark--header logo-on-dark">
+              <img src="assets/daintta-mark.png" alt="DAINTTA" class="brand-mark brand-mark--header logo-on-light">
+            </div>
+          </header>
+
+          <div class="slide-body">
+            <div class="layout-process">
+              <div class="process-pipeline">
+                <!-- Step 1 -->
+                <div class="process-step">
+                  <span class="step-phase-badge">STAGE 01</span>
+                  <h3 class="step-title">Threat Modelling &amp; Boundary Scoping</h3>
+                  <div class="step-details">
+                    <div>&bull; NCSC CAF Threat Analysis</div>
+                    <div>&bull; Physical &amp; Logical Zoning</div>
+                    <div>&bull; Supply Chain Source Audit</div>
+                  </div>
+                  <div class="step-meta">
+                    <span class="mono-label">GATE A</span>
+                    <span class="badge badge--success">PASSED</span>
+                  </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step process-step--active">
+                  <span class="step-phase-badge">STAGE 02</span>
+                  <h3 class="step-title">Enclave Build &amp; Model Hardening</h3>
+                  <div class="step-details">
+                    <div>&bull; Weight Quantization &amp; Pinning</div>
+                    <div>&bull; Side-Channel Shielding</div>
+                    <div>&bull; Air-Gap Bus Provisioning</div>
+                  </div>
+                  <div class="step-meta">
+                    <span class="mono-label">GATE B</span>
+                    <span class="badge badge--blue">CURRENT</span>
+                  </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step">
+                  <span class="step-phase-badge">STAGE 03</span>
+                  <h3 class="step-title">Adversarial Red Teaming</h3>
+                  <div class="step-details">
+                    <div>&bull; Prompt Injection Penetration</div>
+                    <div>&bull; Weight Inversion Stress Test</div>
+                    <div>&bull; EMP &amp; Severance Simulation</div>
+                  </div>
+                  <div class="step-meta">
+                    <span class="mono-label">GATE C</span>
+                    <span class="badge badge--muted">PENDING</span>
+                  </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-step">
+                  <span class="step-phase-badge">STAGE 04</span>
+                  <h3 class="step-title">Operational Live Deployment</h3>
+                  <div class="step-details">
+                    <div>&bull; Tactical Node Commissioning</div>
+                    <div>&bull; Real-Time Audit Telemetry</div>
+                    <div>&bull; Continuous Attestation Cycle</div>
+                  </div>
+                  <div class="step-meta">
+                    <span class="mono-label">GATE D</span>
+                    <span class="badge badge--muted">TARGET Q1</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Supporting Strategic Callout -->
+              <div class="callout callout--cyan">
+                <div class="callout-title">ACCREDITATION ASSURANCE DIRECTIVE</div>
+                <div class="callout-body">
+                  Every stage transition enforces formal mathematical verification of model weights and deterministic
+                  reproducible builds prior to physical installation on operational hardware.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <div class="slide-footer-left">NOT OFFICIAL SENSITIVE</div>
+            <div class="slide-footer-center">
+              <img src="assets/daintta-logo-white.png" alt="DAINTTA" class="brand-logo brand-logo--footer logo-on-dark">
+              <img src="assets/daintta-logo.png" alt="DAINTTA" class="brand-logo brand-logo--footer logo-on-light">
+              <span style="opacity: 0.35;">&bull;</span>
+              <span>SOVEREIGN AI ARCHITECTURE BRIEFING</span>
+            </div>
+            <div class="slide-footer-right">05 / 08</div>
+          </footer>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 06: ARCHITECTURE DIAGRAM
+           ==================================================================== -->
+      <section class="slide" id="slide-6">
+        <div class="slide-inner">
+          <header class="slide-header">
+            <div class="slide-header-content">
+              <span class="eyebrow eyebrow--cyan">TECHNICAL ARCHITECTURE</span>
+              <h2 class="slide-title">Sovereign Enclave Topology</h2>
+              <p class="slide-subtitle">Hardware-isolated zero-trust execution boundary protecting mission models and
+                deterministic actuators.</p>
+            </div>
+            <div class="slide-header-meta">
+              <div class="classification-badge classification-badge--sovereign">
+                ENCLAVE ASSURED
+              </div>
+              <img src="assets/daintta-mark-white.png" alt="DAINTTA" class="brand-mark brand-mark--header logo-on-dark">
+              <img src="assets/daintta-mark.png" alt="DAINTTA" class="brand-mark brand-mark--header logo-on-light">
+            </div>
+          </header>
+
+          <div class="slide-body">
+            <div class="layout-architecture">
+              <div class="architecture-canvas-wrapper">
+                <!-- Architecture Legend / Toolbar -->
+                <div class="architecture-toolbar">
+                  <div class="architecture-legend">
+                    <div class="legend-item">
+                      <span class="legend-dot" style="background-color: var(--color-cyan-primary)"></span>
+                      <span>Sovereign Boundary (Air-Gapped)</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-dot" style="background-color: var(--color-blue-primary)"></span>
+                      <span>Deterministic Core Node</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-dot" style="background-color: #64748b"></span>
+                      <span>Encrypted Sensor Bus</span>
+                    </div>
+                  </div>
+                  <div class="mono-label">TOPOLOGY ID: ARC-SOV-088</div>
+                </div>
+
+                <!-- SVG Technical Engineering Diagram -->
+                <svg class="diagram-svg" viewBox="0 0 1600 520">
+                  <defs>
+                    <!-- Marker: Standard Arrowhead -->
+                    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6"
+                      orient="auto-start-reverse">
+                      <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b" />
+                    </marker>
+                    <!-- Marker: Blue Arrowhead -->
+                    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6"
+                      orient="auto-start-reverse">
+                      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--color-blue-primary)" />
+                    </marker>
+                    <!-- Marker: Cyan Arrowhead -->
+                    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6"
+                      orient="auto-start-reverse">
+                      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--color-cyan-primary)" />
+                    </marker>
+                  </defs>
+
+                  <!-- ================= ZONE 1: TACTICAL INGESTION ================= -->
+                  <g id="zone-ingestion">
+                    <rect class="svg-zone" x="30" y="30" width="340" height="460" />
+                    <text class="svg-zone-label" x="50" y="65">ZONE 01 &bull; SENSOR INGESTION</text>
+
+                    <!-- Node 1A -->
+                    <g class="svg-node" transform="translate(50, 95)">
+                      <rect class="svg-node-box svg-node-box--elevated" width="300" height="100" />
+                      <text class="svg-node-tag" x="20" y="30">INPUT PERIMETER</text>
+                      <text class="svg-node-title" x="20" y="55">Multi-Modal Sensor Feed</text>
+                      <text class="svg-node-subtitle" x="20" y="78">Radar &bull; Electro-Optical &bull; RF
+                        Telemetry</text>
+                    </g>
+
+                    <!-- Node 1B -->
+                    <g class="svg-node" transform="translate(50, 230)">
+                      <rect class="svg-node-box" width="300" height="100" />
+                      <text class="svg-node-tag" x="20" y="30">GATEWAY</text>
+                      <text class="svg-node-title" x="20" y="55">Data Diode &amp; Filter</text>
+                      <text class="svg-node-subtitle" x="20" y="78">Hardware One-Way Photonic Diode</text>
+                    </g>
+
+                    <!-- Node 1C -->
+                    <g class="svg-node" transform="translate(50, 365)">
+                      <rect class="svg-node-box" width="300" height="100" />
+                      <text class="svg-node-tag" x="20" y="30">INPUT VALIDATOR</text>
+                      <text class="svg-node-title" x="20" y="55">Schema Sanitiser</text>
+                      <text class="svg-node-subtitle" x="20" y="78">Buffer Overflow &amp; Injection Guard</text>
+                    </g>
+                  </g>
+
+                  <!-- Internal Ingestion Flow Connectors -->
+                  <path class="svg-connector" d="M 200 195 L 200 230" marker-end="url(#arrow)" />
+                  <path class="svg-connector" d="M 200 330 L 200 365" marker-end="url(#arrow)" />
+
+                  <!-- ================= ZONE 2: SOVEREIGN ENCLAVE (CORE) ================= -->
+                  <g id="zone-enclave">
+                    <rect class="svg-zone svg-zone--enclave" x="430" y="30" width="740" height="460" />
+                    <text class="svg-zone-label svg-zone-label--cyan" x="460" y="65">ZONE 02 &bull; SOVEREIGN ENCLAVE
+                      (AIR-GAPPED)</text>
+
+                    <!-- Core Node: Model Runtime -->
+                    <g class="svg-node" transform="translate(460, 95)">
+                      <rect class="svg-node-box svg-node-box--highlight" width="330" height="150" />
+                      <text class="svg-node-tag text-accent" x="24" y="32">CORE COMPUTE &bull; TRL-8</text>
+                      <text class="svg-node-title" x="24" y="64">Hardened Inference Engine</text>
+                      <text class="svg-node-subtitle" x="24" y="92">Deterministic Quantized Transformer</text>
+                      <rect x="24" y="112" width="130" height="22" rx="3" fill="rgba(59, 130, 246, 0.15)"
+                        stroke="var(--color-blue-border)" />
+                      <text x="34" y="127" font-family="var(--font-mono)" font-size="10"
+                        fill="var(--color-blue-hover)">Sub-4ms Latency</text>
+                    </g>
+
+                    <!-- Enclave Node: Vector Store -->
+                    <g class="svg-node" transform="translate(820, 95)">
+                      <rect class="svg-node-box svg-node-box--elevated" width="320" height="150" />
+                      <text class="svg-node-tag" x="24" y="32">KNOWLEDGE STORE</text>
+                      <text class="svg-node-title" x="24" y="64">Tactical Vector Index</text>
+                      <text class="svg-node-subtitle" x="24" y="92">Encrypted Sovereign RAG Store</text>
+                      <rect x="24" y="112" width="140" height="22" rx="3" fill="rgba(255, 255, 255, 0.05)"
+                        stroke="var(--color-border-subtle)" />
+                      <text x="34" y="127" font-family="var(--font-mono)" font-size="10"
+                        fill="var(--color-text-secondary)">AES-256 Memory</text>
+                    </g>
+
+                    <!-- Enclave Node: TPM Attestation Core -->
+                    <g class="svg-node" transform="translate(460, 310)">
+                      <rect class="svg-node-box svg-node-box--cyan" width="330" height="145" />
+                      <text class="svg-node-tag" x="24" y="32" fill="var(--color-cyan-hover)">CRYPTOGRAPHIC ROOT</text>
+                      <text class="svg-node-title" x="24" y="64">TPM 2.0 Hardware Vault</text>
+                      <text class="svg-node-subtitle" x="24" y="92">Zero-Trust Memory Bus Attestation</text>
+                      <text class="svg-node-subtitle" x="24" y="116">Continuous Platform PCR Checks</text>
+                    </g>
+
+                    <!-- Enclave Node: Policy & Safety Engine -->
+                    <g class="svg-node" transform="translate(820, 310)">
+                      <rect class="svg-node-box svg-node-box--elevated" width="320" height="145" />
+                      <text class="svg-node-tag" x="24" y="32">RULES ENGINE</text>
+                      <text class="svg-node-title" x="24" y="64">Rules of Engagement Gate</text>
+                      <text class="svg-node-subtitle" x="24" y="92">Formal Logic Safety Constraints</text>
+                      <text class="svg-node-subtitle" x="24" y="116">Hardware Kill-Switch Interface</text>
+                    </g>
+                  </g>
+
+                  <!-- Internal Enclave Connectors -->
+                  <path class="svg-connector svg-connector--cyan svg-connector--flow" d="M 790 170 L 820 170"
+                    marker-end="url(#arrow-cyan)" />
+                  <path class="svg-connector svg-connector--cyan" d="M 625 245 L 625 310"
+                    marker-end="url(#arrow-cyan)" />
+                  <path class="svg-connector" d="M 790 380 L 820 380" marker-end="url(#arrow)" />
+                  <path class="svg-connector svg-connector--accent" d="M 980 245 L 980 310"
+                    marker-end="url(#arrow-blue)" />
+
+                  <!-- Cross Boundary Connector: Zone 1 to Zone 2 -->
+                  <path class="svg-connector svg-connector--accent svg-connector--flow"
+                    d="M 350 415 L 400 415 L 400 170 L 460 170" marker-end="url(#arrow-blue)" />
+                  <rect class="svg-label-bg" x="365" y="270" width="70" height="22" />
+                  <text class="svg-label-text" x="400" y="281">AIR-GAP</text>
+
+                  <!-- ================= ZONE 3: CONSUMERS & ACTUATORS ================= -->
+                  <g id="zone-consumers">
+                    <rect class="svg-zone" x="1230" y="30" width="340" height="460" />
+                    <text class="svg-zone-label" x="1250" y="65">ZONE 03 &bull; TACTICAL MISSION C2</text>
+
+                    <!-- Node 3A -->
+                    <g class="svg-node" transform="translate(1250, 95)">
+                      <rect class="svg-node-box svg-node-box--elevated" width="300" height="110" />
+                      <text class="svg-node-tag" x="20" y="30">HUMAN-IN-THE-LOOP</text>
+                      <text class="svg-node-title" x="20" y="55">Commander C2 Dashboard</text>
+                      <text class="svg-node-subtitle" x="20" y="78">Explainable Reasoning Trace</text>
+                    </g>
+
+                    <!-- Node 3B -->
+                    <g class="svg-node" transform="translate(1250, 240)">
+                      <rect class="svg-node-box" width="300" height="110" />
+                      <text class="svg-node-tag" x="20" y="30">DEFENCE ACTUATION</text>
+                      <text class="svg-node-title" x="20" y="55">Countermeasure Controller</text>
+                      <text class="svg-node-subtitle" x="20" y="78">Sub-millisecond Action Triggers</text>
+                    </g>
+
+                    <!-- Node 3C -->
+                    <g class="svg-node" transform="translate(1250, 385)">
+                      <rect class="svg-node-box" width="300" height="80" />
+                      <text class="svg-node-tag" x="20" y="30">AUDIT LEDGER</text>
+                      <text class="svg-node-title" x="20" y="55">Cryptographic Flight Recorder</text>
+                    </g>
+                  </g>
+
+                  <!-- Connectors from Enclave to Zone 3 -->
+                  <path class="svg-connector svg-connector--accent svg-connector--flow" d="M 1140 170 L 1250 150"
+                    marker-end="url(#arrow-blue)" />
+                  <path class="svg-connector svg-connector--cyan svg-connector--flow" d="M 1140 380 L 1250 295"
+                    marker-end="url(#arrow-cyan)" />
+                  <path class="svg-connector" d="M 1140 420 L 1200 420 L 1200 425 L 1250 425"
+                    marker-end="url(#arrow)" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <div class="slide-footer-left">NOT OFFICIAL SENSITIVE</div>
+            <div class="slide-footer-center">
+              <img src="assets/daintta-logo-white.png" alt="DAINTTA" class="brand-logo brand-logo--footer logo-on-dark">
+              <img src="assets/daintta-logo.png" alt="DAINTTA" class="brand-logo brand-logo--footer logo-on-light">
+              <span style="opacity: 0.35;">&bull;</span>
+              <span>SOVEREIGN AI ARCHITECTURE BRIEFING</span>
+            </div>
+            <div class="slide-footer-right">06 / 08</div>
+          </footer>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 07: METRICS SCORECARD
+           ==================================================================== -->
+      <section class="slide" id="slide-7">
+        <div class="slide-inner">
+          <header class="slide-header">
+            <div class="slide-header-content">
+              <span class="eyebrow">PERFORMANCE BENCHMARKS</span>
+              <h2 class="slide-title">Operational SLA &amp; Security Metrics</h2>
+              <p class="slide-subtitle">Empirical performance validation across tactical edge testbeds under simulated
+                contested warfare conditions.</p>
+            </div>
+            <div class="slide-header-meta">
+              <span class="badge badge--success"><span class="status-dot"></span> BENCHMARKED</span>
+              <img src="assets/daintta-mark-white.png" alt="DAINTTA" class="brand-mark brand-mark--header logo-on-dark">
+              <img src="assets/daintta-mark.png" alt="DAINTTA" class="brand-mark brand-mark--header logo-on-light">
+            </div>
+          </header>
+
+          <div class="slide-body">
+            <div class="layout-metrics">
+              <!-- Top Metrics Strip -->
+              <div class="metrics-strip">
+                <div class="metric-card metric-card--highlighted">
+                  <div class="metric-header">
+                    <span class="mono-label">P99 INFERENCE SLA</span>
+                    <span class="metric-delta metric-delta--positive">&uarr; 3.8x FASTER</span>
+                  </div>
+                  <div class="metric-value-xl">3.8<span class="metric-unit">ms</span></div>
+                  <div class="metric-label">Deterministic Edge Latency</div>
+                  <div class="metric-subtext">Zero jitter on dedicated neural accelerator</div>
+                </div>
+
+                <div class="metric-card">
+                  <div class="metric-header">
+                    <span class="mono-label">SOVEREIGN AVAILABILITY</span>
+                    <span class="metric-delta metric-delta--positive">100% AIR-GAP</span>
+                  </div>
+                  <div class="metric-value-xl">99.99<span class="metric-unit">%</span></div>
+                  <div class="metric-label">Contested Uptime</div>
+                  <div class="metric-subtext">Sustained during total orbital blackout</div>
+                </div>
+
+                <div class="metric-card">
+                  <div class="metric-header">
+                    <span class="mono-label">ATTESTATION INTEGRITY</span>
+                    <span class="metric-delta metric-delta--positive">0 DRIFT</span>
+                  </div>
+                  <div class="metric-value-xl">100<span class="metric-unit">%</span></div>
+                  <div class="metric-label">Hardware-Rooted Proofs</div>
+                  <div class="metric-subtext">Cryptographic TPM 2.0 PCR checks</div>
+                </div>
+
+                <div class="metric-card">
+                  <div class="metric-header">
+                    <span class="mono-label">DATA LEAKAGE INCIDENTS</span>
+                    <span class="metric-delta metric-delta--positive">ZERO-TRUST</span>
+                  </div>
+                  <div class="metric-value-xl">0<span class="metric-unit">CVE</span></div>
+                  <div class="metric-label">Exfiltration Surface</div>
+                  <div class="metric-subtext">NCSC Cyber Assessment Framework verified</div>
+                </div>
+              </div>
+
+              <!-- Bottom Analysis Split -->
+              <div class="metrics-content-split">
+                <div class="card card--elevated">
+                  <div class="card-header">
+                    <h3 class="card-title">Stress-Testing Under Adversarial Electronic Attack</h3>
+                    <span class="badge badge--blue">NATO TRL-7 PROTOCOL</span>
+                  </div>
+                  <p class="card-body">
+                    Validation trials conducted over 1,200 continuous hours demonstrated that enclave sandboxing
+                    maintained strict bounded execution times without thermal throttling or memory fragmentation.
+                  </p>
+                  <div class="statement-callout-grid" style="margin-top: var(--space-4);">
+                    <div class="callout">
+                      <div class="callout-title">Cold Boot Attestation</div>
+                      <div class="callout-body">1.4 seconds from physical power to accredited state.</div>
+                    </div>
+                    <div class="callout callout--cyan">
+                      <div class="callout-title">Throughput Density</div>
+                      <div class="callout-body">480 concurrent sensor streams per 1U ruggedised rack.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Assurance Sign-Off</h3>
+                    <span class="badge badge--success">CERTIFIED</span>
+                  </div>
+                  <div class="item-list">
+                    <div class="numbered-item">
+                      <span class="item-numeral">&#10003;</span>
+                      <div class="item-content">
+                        <div class="item-title">DSTL Technical Review</div>
+                        <div class="item-desc">Completed August 2026</div>
+                      </div>
+                    </div>
+                    <div class="numbered-item">
+                      <span class="item-numeral">&#10003;</span>
+                      <div class="item-content">
+                        <div class="item-title">Cabinet Office Cyber Audit</div>
+                        <div class="item-desc">Assessed Level 4 Resilience</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <div class="slide-footer-left">NOT OFFICIAL SENSITIVE</div>
+            <div class="slide-footer-center">
+              <img src="assets/daintta-logo-white.png" alt="DAINTTA" class="brand-logo brand-logo--footer logo-on-dark">
+              <img src="assets/daintta-logo.png" alt="DAINTTA" class="brand-logo brand-logo--footer logo-on-light">
+              <span style="opacity: 0.35;">&bull;</span>
+              <span>SOVEREIGN AI ARCHITECTURE BRIEFING</span>
+            </div>
+            <div class="slide-footer-right">07 / 08</div>
+          </footer>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SLIDE 08: SECTION DIVIDER
+           ==================================================================== -->
+      <section class="slide" id="slide-8">
+        <div class="slide-inner">
+          <img src="assets/daintta-mark-white.png" alt="" class="brand-mark brand-mark--watermark logo-on-dark"
+            aria-hidden="true">
+          <img src="assets/daintta-mark.png" alt="" class="brand-mark brand-mark--watermark logo-on-light"
+            aria-hidden="true">
+          <div class="layout-section">
+            <div class="section-hero">
+              <img src="assets/daintta-logo-white.png" alt="DAINTTA - Finding intelligence in data"
+                class="brand-logo brand-logo--section logo-on-dark">
+              <img src="assets/daintta-logo.png" alt="DAINTTA - Finding intelligence in data"
+                class="brand-logo brand-logo--section logo-on-light">
+              <span class="eyebrow eyebrow--cyan">NEXT SECTION &bull; DECK CHAPTER 02</span>
+              <div class="section-numeral">02</div>
+              <h2 class="slide-title" style="font-size: 52px; line-height: 1.1;">
+                Procurement, Governance &amp; Pilot Deployment
+              </h2>
+              <p class="body-lead text-secondary">
+                Commercial structuring, sovereign intellectual property retention, and the 180-day operational prototype
+                roadmap for operational commands.
+              </p>
+            </div>
+
+            <div class="section-agenda-track">
+              <span class="mono-label">AGENDA TRACKER</span>
+              <div class="item-list">
+                <div class="numbered-item" style="opacity: 0.5;">
+                  <span class="item-numeral"
+                    style="background: transparent; color: var(--color-text-muted); border-color: var(--color-border-hairline);">01</span>
+                  <div class="item-content">
+                    <div class="item-title">Sovereign Architecture &amp; Threat Posture</div>
+                    <div class="item-desc">Completed &bull; Slides 01 - 07</div>
+                  </div>
+                </div>
+
+                <div class="numbered-item"
+                  style="border-color: var(--color-blue-border); background: var(--color-surface-2);">
+                  <span class="item-numeral">02</span>
+                  <div class="item-content">
+                    <div class="item-title text-accent">Procurement &amp; Governance Model</div>
+                    <div class="item-desc text-white">Current Chapter &bull; Up Next</div>
+                  </div>
+                </div>
+
+                <div class="numbered-item" style="opacity: 0.5;">
+                  <span class="item-numeral"
+                    style="background: transparent; color: var(--color-text-muted); border-color: var(--color-border-hairline);">03</span>
+                  <div class="item-content">
+                    <div class="item-title">Tactical Field Trials &amp; Timetable</div>
+                    <div class="item-desc">Target Phase &bull; Q1 2027</div>
+                  </div>
+                </div>
+
+                <div class="numbered-item" style="opacity: 0.5;">
+                  <span class="item-numeral"
+                    style="background: transparent; color: var(--color-text-muted); border-color: var(--color-border-hairline);">04</span>
+                  <div class="item-content">
+                    <div class="item-title">Executive Action &amp; Approvals</div>
+                    <div class="item-desc">Decision Gates &bull; Defence Board</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="slide-footer">
+            <div class="slide-footer-left">NOT OFFICIAL SENSITIVE</div>
+            <div class="slide-footer-center">
+              <img src="assets/daintta-logo-white.png" alt="DAINTTA" class="brand-logo brand-logo--footer logo-on-dark">
+              <img src="assets/daintta-logo.png" alt="DAINTTA" class="brand-logo brand-logo--footer logo-on-light">
+              <span style="opacity: 0.35;">&bull;</span>
+              <span>SOVEREIGN AI ARCHITECTURE BRIEFING</span>
+            </div>
+            <div class="slide-footer-right">08 / 08</div>
+          </footer>
+        </div>
+      </section>
+
+    </div><!-- /#deck-stage -->
+  </div><!-- /#deck-viewport -->
+
+  <!-- ======================================================================
+       PRESENTATION CONTROLS (HUD)
+       ====================================================================== -->
+  <nav id="deck-controls" aria-label="Presentation Controls">
+    <button class="deck-btn" id="deck-btn-prev" title="Previous Slide (Left Arrow, Backspace)"
+      aria-label="Previous Slide">
+      <svg viewBox="0 0 24 24">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <div class="deck-counter-badge">
+      <span id="deck-counter-current">01</span> / <span id="deck-counter-total">08</span>
+    </div>
+
+    <button class="deck-btn" id="deck-btn-next" title="Next Slide (Right Arrow, Space)" aria-label="Next Slide">
+      <svg viewBox="0 0 24 24">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+    <div style="width: 1px; height: 16px; background-color: var(--color-border-subtle); margin: 0 4px;"></div>
+
+    <button class="deck-btn" id="deck-btn-overview" title="Toggle Slide Overview (O, Esc)" aria-label="Slide Overview">
+      <svg viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7"></rect>
+        <rect x="14" y="3" width="7" height="7"></rect>
+        <rect x="14" y="14" width="7" height="7"></rect>
+        <rect x="3" y="14" width="7" height="7"></rect>
+      </svg>
+    </button>
+
+    <button class="deck-btn" id="deck-btn-fullscreen" title="Toggle Fullscreen (F)" aria-label="Fullscreen">
+      <svg viewBox="0 0 24 24">
+        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+      </svg>
+    </button>
+
+    <button class="deck-btn" id="deck-btn-theme" title="Toggle Light / Dark Mode (T)" aria-label="Toggle Theme">
+      <svg class="theme-icon-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="theme-icon-moon" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+
+    <button class="deck-btn" id="deck-btn-help" title="Keyboard Shortcuts (?)" aria-label="Shortcuts">
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Global Linear Progress Bar -->
+  <div id="deck-progress">
+    <div id="deck-progress-bar"></div>
+  </div>
+
+  <!-- Keyboard Shortcuts Modal -->
+  <aside class="shortcuts-modal-backdrop" id="shortcuts-modal" role="dialog" aria-modal="true"
+    aria-label="Keyboard Shortcuts">
+    <div class="shortcuts-dialog">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <h3 class="slide-title" style="font-size: 24px;">Navigation Shortcuts</h3>
+        <button class="deck-btn modal-close-btn" aria-label="Close Modal">&times;</button>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="numbered-item">
+          <span class="mono-code">&rarr; / Space / L</span>
+          <span class="body-sm text-white">Next slide</span>
+        </div>
+        <div class="numbered-item">
+          <span class="mono-code">&larr; / Backspace / H</span>
+          <span class="body-sm text-white">Previous slide</span>
+        </div>
+        <div class="numbered-item">
+          <span class="mono-code">Home / End</span>
+          <span class="body-sm text-white">First / Last slide</span>
+        </div>
+        <div class="numbered-item">
+          <span class="mono-code">1 - 8</span>
+          <span class="body-sm text-white">Jump directly to slide</span>
+        </div>
+        <div class="numbered-item">
+          <span class="mono-code">O / Esc</span>
+          <span class="body-sm text-white">Slide overview grid</span>
+        </div>
+        <div class="numbered-item">
+          <span class="mono-code">F</span>
+          <span class="body-sm text-white">Toggle fullscreen</span>
+        </div>
+        <div class="numbered-item">
+          <span class="mono-code">T</span>
+          <span class="body-sm text-white">Toggle dark / light theme</span>
+        </div>
+        <div class="numbered-item">
+          <span class="mono-code">?</span>
+          <span class="body-sm text-white">Show / hide this dialog</span>
+        </div>
+        <div class="numbered-item">
+          <span class="mono-code">Cmd + P</span>
+          <span class="body-sm text-white">Export to PDF (Print)</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Presentation Engine JS -->
+  <script src="js/presentation.js"></script>
+</body>
+
+</html>

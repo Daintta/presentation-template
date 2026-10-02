@@ -1,0 +1,454 @@
+/**
+ * BASE PRESENTATION ENGINE & VIEWPORT SCALER
+ * Enforces strict 16:9 aspect ratio at 1920x1080 logical resolution
+ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--color-canvas);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+/* ==========================================================================
+   VIEWPORT & STAGE ARCHITECTURE
+   The stage always maintains 1920x1080 regardless of window resolution
+   ========================================================================== */
+
+#deck-viewport {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-canvas);
+}
+
+#deck-stage {
+  position: absolute;
+  width: var(--slide-width);
+  height: var(--slide-height);
+  left: 50%;
+  top: 50%;
+  transform-origin: center center;
+  transform: translate(-50%, -50%) scale(var(--deck-scale, 1));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 0 1px var(--color-border-hairline);
+  background-color: var(--color-surface-base);
+  overflow: hidden;
+  transition: transform 120ms ease-out;
+}
+
+/* Optional subtle engineering background grid on stage */
+.deck-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, var(--color-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid-line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.75;
+}
+
+/* Corner registration marks for high-precision technical feel */
+.deck-stage-markers {
+  position: absolute;
+  inset: 20px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.deck-stage-markers::before,
+.deck-stage-markers::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--color-border-subtle);
+  border-style: solid;
+}
+
+.deck-stage-markers::before {
+  top: 0;
+  left: 0;
+  border-width: 1px 0 0 1px;
+}
+
+.deck-stage-markers::after {
+  bottom: 0;
+  right: 0;
+  border-width: 0 1px 1px 0;
+}
+
+/* ==========================================================================
+   SLIDE CANVAS & COMPONENT CHROME
+   ========================================================================== */
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--slide-width);
+  height: var(--slide-height);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition-slide), transform var(--transition-slide);
+  transform: scale(0.996);
+  z-index: 1;
+  background-color: var(--color-surface-base);
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+  z-index: 2;
+}
+
+/* Standard internal padding and structural flex column */
+.slide-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--slide-padding-top) var(--slide-padding-x) var(--slide-padding-bottom);
+  z-index: 2;
+}
+
+/* Slide Header (Eyebrow + Title + Subtitle + Meta Tag) */
+.slide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--slide-header-gap);
+  flex-shrink: 0;
+}
+
+.slide-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 1350px;
+}
+
+.slide-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Slide Body Area (Occupies remaining height) */
+.slide-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Slide Footer (Classification, Programme context, Slide counter) */
+.slide-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border-hairline);
+  margin-top: auto;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-caption);
+  color: var(--color-text-muted);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.slide-footer-left,
+.slide-footer-center,
+.slide-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   NAVIGATION HUD & PRESENTATION CONTROLS
+   Minimalist, dark, high-contrast control bar
+   ========================================================================== */
+
+#deck-controls {
+  position: fixed;
+  bottom: 24px;
+  right: 28px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background-color: rgba(11, 17, 28, 0.85);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  opacity: 0.35;
+  transition: opacity var(--transition-normal);
+}
+
+body[data-theme="light"] #deck-controls {
+  background-color: rgba(255, 255, 255, 0.90);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+body[data-theme="light"] .shortcuts-modal-backdrop {
+  background-color: rgba(15, 23, 42, 0.5);
+}
+
+.theme-icon-sun {
+  display: block;
+}
+
+.theme-icon-moon {
+  display: none;
+}
+
+body[data-theme="light"] .theme-icon-sun {
+  display: none !important;
+}
+
+body[data-theme="light"] .theme-icon-moon {
+  display: block !important;
+}
+
+#deck-controls:hover,
+#deck-controls:focus-within {
+  opacity: 1;
+}
+
+.deck-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.deck-btn:hover {
+  background-color: var(--color-surface-2);
+  color: var(--color-text-primary);
+}
+
+.deck-btn:active {
+  transform: scale(0.95);
+}
+
+.deck-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.deck-counter-badge {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  padding: 0 8px;
+  user-select: none;
+}
+
+/* Global Progress Bar at bottom of viewport */
+#deck-progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  z-index: 99;
+}
+
+#deck-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-blue-primary), var(--color-cyan-primary));
+  transition: width var(--transition-normal);
+}
+
+/* ==========================================================================
+   OVERVIEW GRID MODE (Press 'O' or click grid icon)
+   Presents all slides in an interactive multi-column thumbnail grid
+   ========================================================================== */
+
+body.overview-mode {
+  overflow-y: auto !important;
+}
+
+body.overview-mode #deck-viewport {
+  height: auto;
+  min-height: 100vh;
+  overflow-y: auto;
+  align-items: flex-start;
+  padding: 60px 40px;
+}
+
+body.overview-mode #deck-stage {
+  position: static;
+  transform: none !important;
+  width: 100%;
+  max-width: 1600px;
+  height: auto;
+  background: transparent;
+  box-shadow: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 28px;
+  overflow: visible;
+}
+
+body.overview-mode .slide {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  width: 100% !important;
+  aspect-ratio: 16 / 9;
+  height: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: none !important;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+body.overview-mode .slide:hover {
+  border-color: var(--color-blue-primary);
+  transform: translateY(-4px);
+}
+
+body.overview-mode .slide.active {
+  border-color: var(--color-cyan-primary);
+  box-shadow: 0 0 0 2px var(--color-cyan-primary), var(--shadow-elevated);
+}
+
+body.overview-mode .slide-inner {
+  transform-origin: top left;
+  transform: scale(calc(1 / (1920 / 380))); /* Approximate visual density preview */
+  width: 1920px;
+  height: 1080px;
+  pointer-events: none;
+}
+
+/* Shortcuts Modal */
+.shortcuts-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(6, 9, 15, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.shortcuts-modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.shortcuts-dialog {
+  width: 580px;
+  background-color: var(--color-surface-1);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-elevated);
+  position: relative;
+}
+
+/* ==========================================================================
+   PRINT / PDF EXPORT ENGINE
+   Allows seamless vector printing via Cmd+P (Save as PDF)
+   ========================================================================== */
+
+@media print {
+  @page {
+    size: 1920px 1080px;
+    margin: 0;
+  }
+
+  html, body {
+    width: 1920px;
+    height: auto;
+    overflow: visible;
+    background-color: var(--color-surface-base) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  #deck-viewport {
+    display: block;
+    width: 1920px;
+    height: auto;
+    position: static;
+  }
+
+  #deck-stage {
+    position: static;
+    transform: none !important;
+    box-shadow: none;
+    width: 1920px;
+    height: auto;
+  }
+
+  .slide {
+    position: relative !important;
+    page-break-after: always;
+    break-after: page;
+    width: 1920px !important;
+    height: 1080px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    transform: none !important;
+  }
+
+  #deck-controls,
+  #deck-progress,
+  .shortcuts-modal-backdrop {
+    display: none !important;
+  }
+}
